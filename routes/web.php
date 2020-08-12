@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::get('/', 'MainController@index')->name('home');
+Route::get('/category/{slug}', 'ShopController@category');
