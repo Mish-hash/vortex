@@ -17,8 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 128);
             $table->string('slug', 192)->unique();
-            $table->string('img_url', 128)->nullable();
+            $table->string('img_url', 512)->nullable();
             $table->double('price', 15, 2);
+            $table->text('description');
             $table->boolean('recommended')->default(0);
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')

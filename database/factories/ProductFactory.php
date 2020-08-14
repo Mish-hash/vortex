@@ -13,6 +13,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'slug' => Str::slug($name, '-'),
         'img_url' => $faker->randomElement(['https://loremflickr.com/320/240', null]),
         'price' => $faker->randomFloat(2, 10, 10000),
+        'description' => $faker->paragraphs(1, true),
         'recommended' => $faker->boolean(),
         'category_id' => $faker->randomElement($categories),
     ];
