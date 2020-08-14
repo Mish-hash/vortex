@@ -11,6 +11,7 @@ class ShopController extends Controller
     public function category($slug) 
     {
         $category = Category::firstWhere('slug', $slug);
+        //dd($category);
         $products = Product::where('category_id', $category->id)->get();
 
         //dd($products->pluck('id')->toArray());

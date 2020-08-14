@@ -13,7 +13,7 @@
         @foreach ($products as $product)
             <div class="col-md-4 mb-5">
                 <p>Product</p>
-                <a href="/category/{{$product->slug}}">
+                <a href="/product/{{$product->slug}}">
                     <img src="{{$product->img_url}}" alt="{{$product->name}}" class="img-fluid">
                     <h3>{{$product->name}}</h3>
                     <p>Price: {{$product->price}}</p>
