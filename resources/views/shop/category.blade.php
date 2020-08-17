@@ -1,6 +1,6 @@
 @extends('shop.layout')
 
-@section('title', $category->name)
+@section('title', 'category -> ' . $category->name)
 
 
 @section('content')
