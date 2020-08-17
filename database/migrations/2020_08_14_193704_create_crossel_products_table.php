@@ -14,12 +14,17 @@ class CreateCrosselProductsTable extends Migration
     public function up()
     {
         Schema::create('crossel_products', function (Blueprint $table) {
-            $table->unsignedBigInteger('product_id')->primary()->unique();
+            $table->id();
+            $table->foreignId('product_id');
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products')
                 ->onDelete('cascade');
-            $table->string('crossel_id', 64);
+            $table->bigInteger('crossel_id')->nullable();
+            /* $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('set null'); */
             $table->timestamps();
         });
     }
