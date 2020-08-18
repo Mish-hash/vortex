@@ -4,13 +4,24 @@
 
 
 @section('content')
+    <div class="col px-lg-5 py-3">
+        <h1 class="text-left mb-3">Product => {{$product->name}}</h1>
+        <a href="/category/{{$category->slug}}" class="text-left">Category => {{$category->name}}</a>
+    </div>
+    <div class="row">
         
+        <div class="col-md-4 py-3">
+            
+            <img src="{{$product->img_url}}" alt="{{$product->name}}" class="img-fluid">
+        </div>
 
-    <h1 class="text-center mb-3">Product => {{$product->name}}</h1>
-    <a href="/category/{{$category->slug}}">Category => {{$category->name}}</a><br>
-    <img src="{{$product->img_url}}" alt="{{$product->name}}" class="img-fluid">
-    <p>{{$product->description}}</p>
-    <p>Price: {{$product->price}}</p>
+        <div class="col-md-8 py-3">
+            <h4>DESCRIPTION</h4>
+            <p>{{$product->description}}</p>
+            <p>Price: {{$product->price}}</p>
+        </div>
+
+    </div>
     
     @isset($crosselProducts)
 

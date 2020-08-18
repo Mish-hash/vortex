@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-    <header>Некий хедер</header>
+    <header>
+        <ul>
+            <li><a href="/">Main</a></li>
+            <li><a href="#">reserved</a></li>
+            <li><a href="#">reserved</a></li>
+        </ul>
+    </header>
     <div class="container">
         <h3>Рабочий div</h3>
         @yield('content')
