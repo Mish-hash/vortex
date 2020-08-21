@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
+        DB::table('users')->insert([
             'name' => Str::random(10),
             'slug' => Str::random(10).'@gmail.com',
             'img_url' => Str::random(10),
