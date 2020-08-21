@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\CrosselProduct;
+use App\Review;
 
 class ShopController extends Controller
 {
@@ -34,7 +35,10 @@ class ShopController extends Controller
         //получаем с таблицы products товары по id которые в массиве $$crossels_id
         $crosselProducts = Product::whereIn('id', $crossels_id)->get();
 
+        //получаем отзывы о товаре
+        $reviews = Review::where('product_id', $product->id)->get();
+
         //передаем полученные результаты в блейд для отрисовки
-        return view('shop.product', compact('product', 'crosselProducts', 'category'));
+        return view('shop.product', compact('product', 'crosselProducts', 'category', 'reviews'));
     }
 }
