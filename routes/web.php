@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@index')->name('home');
 Route::get('/category/{slug}', 'ShopController@category');
 Route::get('/product/{slug}', 'ShopController@product');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

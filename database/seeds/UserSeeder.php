@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'phone' => null,
             'phone_verified_at' => now(),
-            'password' => '123456789', // password
+            'password' => Hash::make('123456789'), // password
             'remember_token' => Str::random(10),
         ]);
     }
