@@ -10,11 +10,14 @@ class MainController extends Controller
 {
     public function index()
     {
+        /* $product = Product::find(1);
+        dd($product->category); */
+
         $categories = Category::all();
         $title = 'Home page';
 
         //$products = Product::where('recommended', '=', 1);
-        $products = Product::where('recommended', '=', 1)
+        $products = Product::with('category')->where('recommended', '=', 1)
             ->where('price', '>', 1500)
             ->whereNotNull('img_url')
             ->orderBy('price')

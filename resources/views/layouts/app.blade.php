@@ -35,9 +35,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a href=""></a>
-                            <a href=""></a>
-                            <a href=""></a>
+                            <a href="#">12345</a>
+                            <a href="#">123456</a>
+                            <a href="#">1234567</a>
                         </li>
                     </ul>
 

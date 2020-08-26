@@ -10,7 +10,7 @@
     
     <h2 class="text-center mb-3">Products</h2>
     <div class="row">
-        @foreach ($products as $product)
+        @foreach ($category->products as $product)
             <div class="col-md-4 mb-5">
                 <p>Product</p>
                 <a href="/product/{{$product->slug}}">

@@ -24,12 +24,14 @@
     </div>
 
     @isset($reviews)
-        <div class="col px-lg-4 py-2">
+        <div class="col px-lg-4">
             <h3>Reviews</h3>
             @foreach ($reviews as $review)
-            <p>Name: {{$review->user_id}}</p>
-            <p>Created: {{$review->created_at}}</p>
-            <p><strong>{{$review->comment}}</strong></p>
+                <div class="col py-2">
+                    <p>Name: {{$review->user->name}}</p>
+                    <p>Created: {{$review->created_at}}</p>
+                    <p><strong>{{$review->comment}}</strong></p>
+                </div>
             @endforeach
         </div>
     @endisset

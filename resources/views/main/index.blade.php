@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('title', $title)
-
-
 @section('content')
         
 
@@ -28,6 +25,7 @@
                     <img src="{{$product->img_url}}" alt="{{$product->name}}" class="img-fluid">
                     <h3>{{$product->name}}</h3>
                     <p>Price: {{$product->price}}</p>
+                    <a href="/category/{{$product->category->slug}}">Category: {{$product->category->name}}</a>
                 </a>
             </div>
         @endforeach
