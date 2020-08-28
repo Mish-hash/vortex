@@ -18,6 +18,8 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', 'MainController@index')->name('home');
+Route::get('/contacts', 'MainController@contacts')->name('contacts');
+Route::post('/contacts', 'MainController@getContacts');
 Route::get('/category/{slug}', 'ShopController@category');
 Route::get('/product/{slug}', 'ShopController@product');
 

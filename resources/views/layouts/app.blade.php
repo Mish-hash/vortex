@@ -34,11 +34,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li>
-                            <a href="#">12345</a>
-                            <a href="#">123456</a>
-                            <a href="#">1234567</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('contacts')}}">contacts</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">123456</a>
+                        </li>   
                     </ul>
 
                     <!-- Right Side Of Navbar -->

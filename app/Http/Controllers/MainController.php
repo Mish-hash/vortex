@@ -27,4 +27,22 @@ class MainController extends Controller
         
         return view('main.index', compact('title', 'categories', 'products'));
     }
+
+    public function contacts()
+    {
+        return view('main.contacts');
+    }
+
+    public function getContacts(Request $request) 
+    {
+        $name = $request->name;
+        $category = new Category();
+        $category->name = $name;
+        $category->slug = \Str::slug($name, '-');
+        $category->save();
+        //$mes = $request->message;
+        //return $user . '<br>' . $mes;
+        //return redirect(route('home'));
+        return back();
+    }
 }
