@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsTo(\App\Category::class); //'App\Category' --- аналогичная запись
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(\App\Review::class);
+    }
 }

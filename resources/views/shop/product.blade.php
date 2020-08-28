@@ -23,9 +23,10 @@
 
     </div>
 
-    @isset($reviews)
+    {{-- @isset($reviews->items)
         <div class="col px-lg-4">
             <h3>Reviews</h3>
+
             @foreach ($reviews as $review)
                 <div class="col py-2">
                     <p>Name: {{$review->user->name}}</p>
@@ -34,7 +35,42 @@
                 </div>
             @endforeach
         </div>
-    @endisset
+    @endisset --}}
+
+    
+    <div class="col px-lg-4">
+        <h3>Reviews({{$reviews->count()}})</h3>
+        @guest
+        <div class="alert alert-secondary" role="alert">
+            <a href="{{ route('login') }}">To leave reviews you must be logged in</a>
+        </div>
+        @else
+            <form action="/newReview" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label>User name</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->name}}" readonly name="userName">
+                    <input type="hidden" value="{{Auth::user()->id}}" name="userId">
+                    <input type="hidden" value="{{$product->id}}" name="productId">
+                </div>
+                <div class="form-group">
+                    <label>Your review</label>
+                    <textarea class="form-control" rows="3" name="message"></textarea>
+                </div>
+                <button class="btn btn-primary">Send review</button>
+            </form> 
+        @endguest
+        @foreach ($reviews as $review)
+            <div class="col py-2">
+                <p>Name: {{$review->user->name}}</p>
+                <p>Created: {{$review->created_at}}</p>
+                <p><strong>{{$review->comment}}</strong></p>
+            </div>
+        @endforeach
+    </div>
+    
+       
+    
     
     @isset($crosselProducts)
 

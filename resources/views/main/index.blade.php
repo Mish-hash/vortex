@@ -27,6 +27,7 @@
                     <p>Price: {{$product->price}}</p>
                     <a href="/category/{{$product->category->slug}}">Category: {{$product->category->name}}</a>
                 </a>
+                <p>Reviews: {{$product->reviews->count()}}</p>
             </div>
         @endforeach
     </div>

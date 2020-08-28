@@ -18,6 +18,7 @@
                     <h3>{{$product->name}}</h3>
                     <p>Price: {{$product->price}}</p>
                 </a>
+                <p>Reviews: {{$product->reviews->count()}}</p>
             </div>
         @endforeach
     </div>

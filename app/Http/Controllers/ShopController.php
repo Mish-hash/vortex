@@ -12,7 +12,7 @@ class ShopController extends Controller
 {
     public function category($slug) 
     {
-        $category = Category::firstWhere('slug', $slug);
+        $category = Category::with('products.reviews')->firstWhere('slug', $slug);
         //dd($category->products);
         //$products = Product::where('category_id', $category->id)->get();
 
@@ -36,9 +36,19 @@ class ShopController extends Controller
         $crosselProducts = Product::whereIn('id', $crossels_id)->get();
 
         //получаем отзывы о товаре
-        $reviews = Review::with('user')->where('product_id', $product->id)->get();
-
+        $reviews = Review::with('user')->where('product_id', $product->id)->orderBy('created_at', 'desc')->get();
+        //dd($reviews);
         //передаем полученные результаты в блейд для отрисовки
         return view('shop.product', compact('product', 'crosselProducts', 'category', 'reviews'));
+    }
+
+    public function newReview(Request $request)
+    {
+        $review = new Review();
+        $review->user_id = $request->userId;
+        $review->product_id = $request->productId;
+        $review->comment = $request->message;
+        $review->save();
+        return back();
     }
 }

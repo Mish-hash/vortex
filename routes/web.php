@@ -22,7 +22,9 @@ Route::get('/contacts', 'MainController@contacts')->name('contacts');
 Route::post('/contacts', 'MainController@getContacts');
 Route::get('/category/{slug}', 'ShopController@category');
 Route::get('/product/{slug}', 'ShopController@product');
+Route::post('/newReview', 'ShopController@newReview');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home-auth');
+
