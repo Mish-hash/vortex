@@ -12,12 +12,13 @@ class ShopController extends Controller
 {
     public function category($slug) 
     {
-        $category = Category::with('products.reviews')->firstWhere('slug', $slug);
+        //$category = Category::with('products.reviews')->firstWhere('slug', $slug);
+
+        $category = Category::with(['products'=>function($query){
+            $query->withCount('reviews');
+        }])->firstWhere('slug', $slug);
         //dd($category->products);
-        //$products = Product::where('category_id', $category->id)->get();
-
-        //dd($products->pluck('id')->toArray());
-
+        
         return view('shop.category', compact('category'));
     }
 
