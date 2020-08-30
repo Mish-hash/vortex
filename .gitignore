@@ -13,6 +13,6 @@ yarn-error.log
 
 
 #npm run dev
-/public/css
-/public/js
+#/public/css
+#/public/js
 public/mix-manifest.json

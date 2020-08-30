@@ -31,7 +31,15 @@ class MainController extends Controller
 
     public function contacts()
     {
-        return view('main.contacts');
+        $products = Product::with('category')->with('reviews')
+            ->where('recommended', '=', 1)
+            ->where('price', '>', 1500)
+            ->whereNotNull('img_url')
+            ->orderBy('price')
+            ->get();
+
+        dd($products);
+        return view('main.contacts', compact('products'));
     }
 
     public function getContacts(Request $request) 

@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="/contacts" method="POST">
-        @csrf
-        <input type="text" name="name">
-        <textarea name="message"></textarea>
-        <button class="btn btn-primary">Send message</button>
-    </form>
+    <div class="slider_main">
+        
+        @foreach ($products as $product)
+            <div>
+                <img src="{{$product->img_url}}" alt="">
+            </div>
+        @endforeach
+        
+    </div>
+
 @endsection

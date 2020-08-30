@@ -17,7 +17,7 @@
     </div>
 
     <h2 class="text-center mb-3">Products</h2>
-    <div class="row">
+    <div class="slider_main">
         @foreach ($products as $product)
             <div class="col-md-4 mb-5">
                 <p>Product</p>
