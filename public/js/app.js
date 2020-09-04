@@ -40381,7 +40381,7 @@ $(document).ready(function () {
     centerMode: true,
     centerPadding: '60px',
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 1000,
     responsive: [{
       breakpoint: 768,

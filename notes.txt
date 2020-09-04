@@ -1,0 +1,3 @@
+работа с правами доступа, описание:
+
+https://laravel.demiart.ru/guide-to-roles-and-permissions/
