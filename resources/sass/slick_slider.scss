@@ -1,8 +1,9 @@
 
-.slider_main .slick-prev, .slider_main .slick-next {
+.slider_main{
+    .slick-prev:before, .slick-next:before {
     color: red; /*to notice it, is white*/
+    font-size: 40px;
+    }
 }
 
-.slick-center {
-    transform: scale(1.1);
-  }
+

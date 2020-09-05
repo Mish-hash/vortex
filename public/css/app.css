@@ -11180,3 +11180,10 @@ a.text-dark:focus {
   opacity: 0.75;
 }
 
+.slider_main .slick-prev:before,
+.slider_main .slick-next:before {
+  color: red;
+  /*to notice it, is white*/
+  font-size: 40px;
+}
+
